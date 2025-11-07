@@ -1,7 +1,7 @@
 ﻿
 using MauiAppHotel1.Models;
 
-namespace MauiAppHotel
+namespace MauiAppHotel1
 {
     public partial class App : Application
     {
@@ -43,10 +43,6 @@ namespace MauiAppHotel
             MainPage = new NavigationPage(new MauiAppHotel1.Views.ContratacaoHospedagem());
         }
 
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
-        }
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
