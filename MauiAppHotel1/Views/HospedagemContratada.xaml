@@ -5,7 +5,7 @@
              NavigationPage.HasNavigationBar="False"
              BackgroundColor="{StaticResource DarkBlue}">
     <VerticalStackLayout VerticalOptions="Center">
-        <Label Text="Suíte super luxo"
+        <Label Text="{Binding QuartoSelecionado.Descricao}"
                TextColor="{StaticResource White}"
                FontFamily="Lora-Bold"
                FontSize="50"
@@ -15,14 +15,16 @@
             <HorizontalStackLayout>
                 <HorizontalStackLayout>
                     <Label Text=" Adultos: "/>
-                    <Label Text="2" TextColor="{StaticResource White}"/>
+                    <Label Text="{Binding QntAdultos}" 
+                           TextColor="{StaticResource DarkBlue}"/>
 
 
                 </HorizontalStackLayout>
 
                 <HorizontalStackLayout>
                     <Label Text=" Crianças: "/>
-                    <Label Text="1" TextColor="{StaticResource White}"/>
+                    <Label Text="{Binding QntCriancas}" 
+                           TextColor="{StaticResource DarkBlue}"/>
                 </HorizontalStackLayout>
             </HorizontalStackLayout>
         </Frame>
@@ -33,11 +35,17 @@
                 <Label Grid.Row="0" Grid.Column="1" Text="Check-out:"/>
                 <Label Grid.Row="0" Grid.Column="2" Text="Estadia:"/>
 
-                <Label Grid.Row="1" Grid.Column="0" Text="10/11/2025"/>
-                <Label Grid.Row="1" Grid.Column="1" Text="13/11/2025"/>
-                <Label Grid.Row="1" Grid.Column="2" Text="3 "/>
+                <Label Grid.Row="1" Grid.Column="0" 
+                 Text="{Binding DataCheckIn, StringFormat='{}{0:dd/MM/yyyy}'}"
+                 TextColor="{StaticResource DarkBlue}"/>
+                <Label Grid.Row="1" Grid.Column="1"
+                 Text="{Binding DataCheckOut, StringFormat='{}{0:dd/MM/yyyy}'}"
+                 TextColor="{StaticResource DarkBlue}"/>
+                <Label Grid.Row="1" Grid.Column="2" 
+                 Text="{Binding Estadia}"
+                 TextColor="{StaticResource DarkBlue}"/>
 
-
+ 
 
 
             </Grid>
@@ -47,7 +55,8 @@
             <HorizontalStackLayout>
 
                 <Label Text="Valor total:"/>
-                <Label Text="R$ 750,00"/>
+                <Label Text="{Binding ValorTotal,StringFormat='{}{0:c}'}"
+                       TextColor="{StaticResource DarkBlue}"/>
             </HorizontalStackLayout>
         </Frame>
         <Button Text="Voltar"

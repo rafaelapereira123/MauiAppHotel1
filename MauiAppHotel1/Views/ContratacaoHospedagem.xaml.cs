@@ -1,4 +1,5 @@
 using MauiAppHotel1;
+using MauiAppHotel1.Models;
 
 namespace MauiAppHotel1.Views
 {
@@ -27,15 +28,31 @@ namespace MauiAppHotel1.Views
             await Navigation.PushAsync(new SobrePage());
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
             try
             {
-                Navigation.PushAsync(new HospedagemContratada());
+
+                Hospedagem h = new Hospedagem
+                {
+                    QuartoSelecionado = (Quarto)pck_quarto.SelectedItem,
+                QntAdultos = Convert.ToInt32(stp_adultos.Value),
+                QntCriancas = Convert.ToInt32(stp_criancas.Value),
+                DataCheckIn = dtpck_checkin.Date,
+                DataCheckOut = dtpck_checkout.Date,
+
+
+
+                };
+                await Navigation.PushAsync(new HospedagemContratada()
+                { 
+                  BindingContext = h
+                
+                });
             }
             catch (Exception ex)
             {
-                DisplayAlert("Ops", ex.Message, "Ok");
+                await DisplayAlert("Ops", ex.Message, "Ok");
             }
         }
 
