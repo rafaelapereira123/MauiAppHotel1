@@ -64,5 +64,11 @@ namespace MauiAppHotel1.Views
             dtpck_checkout.MinimumDate = data_selecionada_checkin.AddDays(1);
             dtpck_checkout.MinimumDate = data_selecionada_checkin.AddMonths(6);
         }
+
+        private async void IrCadastroEvento_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CadastroEvento());
+        }
+
     }
 }
