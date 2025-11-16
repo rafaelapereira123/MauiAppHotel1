@@ -10,8 +10,10 @@
         <VerticalStackLayout Padding="20" Spacing="10">
 
             <Label Text="Resumo do Evento"
-                   FontSize="24"
-                   HorizontalOptions="Center"/>
+                   FontSize="50"
+                   HorizontalOptions="Center"
+                   FontFamily="Lora-Bold"
+                   TextColor="{StaticResource DarkBlue}"/>
 
             <Label Text="{Binding Nome}" FontAttributes="Bold"/>
             <Label Text="{Binding Local}" />
